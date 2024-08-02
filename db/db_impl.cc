@@ -1485,7 +1485,7 @@ Status DBImpl::GetPtr(const ReadOptions& options, const Slice& key,
   }
 
   if (have_stat_update && current->UpdateStats(stats)) {
-    MaybeScheduleCompactionForRead();
+    MaybeScheduleCompaction();
   }
   mem->Unref();
   if (imm != nullptr) imm->Unref();
